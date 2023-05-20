@@ -7,6 +7,7 @@ namespace MySocialNetwork
     {
         public MappingProfile() 
         {
+            CreateMap<User, RegisterViewModel>();
             CreateMap<User, LoginViewModel>();
         }
     }

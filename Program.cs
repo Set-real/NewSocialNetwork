@@ -23,12 +23,11 @@ internal class Program
             })
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
-        // Auto Mapper Configurations
+        // Добавляю маппер
         var mapperConfig = new MapperConfiguration(mc =>
         {
             mc.AddProfile(new MappingProfile());
         });
-
         IMapper mapper = mapperConfig.CreateMapper();
         builder.Services.AddSingleton(mapper);
 
