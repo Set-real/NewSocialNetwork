@@ -4,7 +4,6 @@
     {
         public RegisterViewModel RegisterView { get; set; }
 
-
         // public LoginViewModel LoginView { get; set; }
 
 
