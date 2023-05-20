@@ -2,11 +2,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MySocialNetwork.Models;
-using System.Web.Http.ModelBinding;
 
 namespace MySocialNetwork.Controllers
 {
-    public class AccountManagerController
+    public class AccountManagerController: Controller
     {
         private IMapper _mapper;
 

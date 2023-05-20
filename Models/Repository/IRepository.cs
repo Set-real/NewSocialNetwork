@@ -1,8 +1,6 @@
-﻿using System.
-
-namespace MySocialNetwork.Models.Repository
+﻿namespace MySocialNetwork.Models.Repository
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
         T Get(int id);
