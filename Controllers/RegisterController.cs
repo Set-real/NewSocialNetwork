@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using MySocialNetwork.Models;
 
 namespace MySocialNetwork.Controllers
 {
     public class RegisterController: Controller
     {
+        private IMapper _mapper
         [Route("Register")]
         [HttpGet]
         public IActionResult Register()
