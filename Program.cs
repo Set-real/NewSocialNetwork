@@ -22,14 +22,8 @@ internal class Program
                 opts.Password.RequireDigit = false;
             })
             .AddEntityFrameworkStores<ApplicationDbContext>();
-
         // Добавляю маппер
-        var mapperConfig = new MapperConfiguration(mc =>
-        {
-            mc.AddProfile(new MappingProfile());
-        });
-        IMapper mapper = mapperConfig.CreateMapper();
-        builder.Services.AddSingleton(mapper);
+        builder.Services.AddSingleton(typeof(MappingProfile));
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
