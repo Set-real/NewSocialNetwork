@@ -1,4 +1,5 @@
 using AutoMapper;
+using AwesomeNetwork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MySocialNetwork;
@@ -34,6 +35,7 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        builder.Services.AddRazorPages();
 
         var app = builder.Build();
 

@@ -2,11 +2,11 @@
 using MySocialNetwork.Models.Users;
 using MySocialNetwork.ViewModels.Account;
 
-namespace MySocialNetwork
+namespace AwesomeNetwork
 {
-    public class MappingProfile: Profile
+    public class MappingProfile : Profile
     {
-        public MappingProfile() 
+        public MappingProfile()
         {
             CreateMap<RegisterViewModel, User>()
                 .ForMember(x => x.BirthDay, opt => opt.MapFrom(c => new DateTime((int)c.Year, (int)c.Month, (int)c.Date)))
