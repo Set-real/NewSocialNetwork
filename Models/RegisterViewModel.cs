@@ -43,7 +43,7 @@ namespace MySocialNetwork.Models
 
         [Required]
         [Display(Name = "Никнейм")]
-        public string Login { get; set; }
+        public string? Login { get; set; }
 
     }
 }
