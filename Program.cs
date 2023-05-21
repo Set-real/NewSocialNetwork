@@ -48,10 +48,6 @@ internal class Program
 
         app.UseRouting();
 
-        app.MapControllerRoute(
-            name: "Register",
-            pattern: "{controller = Register}/{action = Register}/{?id}");
-
         app.UseAuthentication();
         app.UseAuthorization();
 
