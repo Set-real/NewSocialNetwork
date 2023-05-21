@@ -1,4 +1,4 @@
-﻿namespace MySocialNetwork.Models.Repository
+﻿namespace MySocialNetwork.Data.Repository
 {
     public interface IRepository<T> where T : class
     {

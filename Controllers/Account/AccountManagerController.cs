@@ -1,11 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using MySocialNetwork.Models;
+using MySocialNetwork.Models.Users;
+using MySocialNetwork.ViewModels.Account;
 
-namespace MySocialNetwork.Controllers
+namespace MySocialNetwork.Controllers.Account
 {
-    public class AccountManagerController: Controller
+    public class AccountManagerController : Controller
     {
         private IMapper _mapper;
 

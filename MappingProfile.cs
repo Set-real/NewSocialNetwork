@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
-using MySocialNetwork.Models;
+using MySocialNetwork.Models.Users;
+using MySocialNetwork.ViewModels.Account;
 
 namespace MySocialNetwork
 {

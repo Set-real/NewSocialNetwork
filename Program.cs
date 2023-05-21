@@ -2,7 +2,8 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MySocialNetwork;
-using MySocialNetwork.Models;
+using MySocialNetwork.Data;
+using MySocialNetwork.Models.Users;
 
 internal class Program
 {

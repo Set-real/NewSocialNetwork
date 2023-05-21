@@ -1,4 +1,4 @@
-﻿namespace MySocialNetwork.Models
+﻿namespace MySocialNetwork.ViewModels.Account
 {
     public class MainViewModel
     {

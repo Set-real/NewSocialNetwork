@@ -2,7 +2,7 @@
 @{
     //ViewData["Title"] = "Главная";
 }
-@model MySocialNetwork.Models.MainViewModel;
+@model MySocialNetwork.ViewModels.Account.MainViewModel;
 
 <div class="row">
     <div class="side">
@@ -14,7 +14,7 @@
 
 
     <div class="main">
-        <partial name="Login" model="Model.LoginView" />
+        <partial name="Login" model="Model.LoginView" />*
         <partial name="Register" model="Model.RegisterView" />
     </div>
 </div>
