@@ -35,19 +35,31 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+
         builder.Services.AddRazorPages();
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
-        if (!app.Environment.IsDevelopment())
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();            
+        }
+        else
         {
             app.UseExceptionHandler("/Home/Error");
+
             app.UseHsts();
         }
 
         app.UseHttpsRedirection();
-        app.UseStaticFiles();
+        var cachePeriod = "0";
+        app.UseStaticFiles(new StaticFileOptions
+        {
+            OnPrepareResponse = ctx =>
+            {
+                ctx.Context.Response.Headers.Append("Cache-Control", $"public, max-age={cachePeriod}");
+            }
+        });
 
         app.UseRouting();
 

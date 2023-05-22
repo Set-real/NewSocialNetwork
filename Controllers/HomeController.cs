@@ -14,13 +14,14 @@ namespace MySocialNetwork.Controllers
             _logger = logger;
         }
 
+        [Route("")]
+        [Route("[controller]/[action]")]
         public IActionResult Index()
         {
-            var mainModel = new MainViewModel();
-
-            return View(mainModel);
+            return View(new MainViewModel());
         }
 
+        [Route("[action]")]
         public IActionResult Privacy()
         {
             return View();

@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using MySocialNetwork.Models.Users;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <a asp-area="" asp-controller="AccountManager" asp-action="Logout">Выход</a>
+}

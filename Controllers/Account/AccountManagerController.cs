@@ -13,11 +13,25 @@ namespace MySocialNetwork.Controllers.Account
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
 
-        public AccountManagerController(IMapper mapper, UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountManagerController(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper)
         {
-            _mapper = mapper;
             _userManager = userManager;
             _signInManager = signInManager;
+            _mapper = mapper;
+        }
+
+
+        [Route("Login")]
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View("Home/Login");
+        }
+
+        [HttpGet]
+        public IActionResult Login(string returnUrl = null)
+        {
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
 
         [Route("Login")]
@@ -30,11 +44,7 @@ namespace MySocialNetwork.Controllers.Account
 
                 var user = _mapper.Map<User>(model);
 
-                var result = await _signInManager.PasswordSignInAsync(
-                    user.Email,
-                    model.Password,
-                    model.RememberMe,
-                    false);
+                var result = await _signInManager.PasswordSignInAsync(user.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
                     if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
@@ -62,5 +72,6 @@ namespace MySocialNetwork.Controllers.Account
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
     }
 }

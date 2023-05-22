@@ -9,7 +9,6 @@ namespace MySocialNetwork.Controllers.Account
     public class RegisterController : Controller
     {
         private IMapper _mapper;
-
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
 
@@ -18,6 +17,20 @@ namespace MySocialNetwork.Controllers.Account
             _mapper = mapper;
             _userManager = userManager;
             _signInManager = signInManager;
+        }
+
+        [Route("Register")]
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View("Home/Register");
+        }
+
+        [Route("RegisterPart2")]
+        [HttpGet]
+        public IActionResult RegisterPart2(RegisterViewModel model)
+        {
+            return View("RegisterPart2", model);
         }
 
         [Route("Register")]
@@ -42,13 +55,6 @@ namespace MySocialNetwork.Controllers.Account
                     }
                 }
             }
-            return View("RegisterPart2", model);
-        }
-
-        [Route("RegisterPart2")]
-        [HttpGet]
-        public IActionResult RegisterPart2(RegisterViewModel model)
-        {
             return View("RegisterPart2", model);
         }
     }
