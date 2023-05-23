@@ -7,7 +7,7 @@ namespace MySocialNetwork.Models.Users
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; } = string.Empty;
-        public DateTime BirthDate { get; set; } = DateTime.UtcNow;
+        public DateTime BirthDate { get; set; }
         public string Image { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
 
