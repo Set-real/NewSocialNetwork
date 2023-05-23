@@ -1,5 +1,8 @@
-﻿﻿@model MySocialNetwork.ViewModels.Account.UserViewModel; 
+﻿@model MySocialNetwork.ViewModels.Account.UserViewModel;
 
+@{
+    ViewData["Title"] = "User";
+}
 <div class="block-reg background-white">
 
     <h4 class="center">@Model.User.GetFullName()</h4>

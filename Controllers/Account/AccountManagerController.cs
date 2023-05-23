@@ -41,7 +41,6 @@ namespace MySocialNetwork.Controllers.Account
         {
             if (ModelState.IsValid)
             {
-
                 var user = _mapper.Map<User>(model);
 
                 var result = await _signInManager.PasswordSignInAsync(user.Email, model.Password, model.RememberMe, false);
@@ -73,5 +72,12 @@ namespace MySocialNetwork.Controllers.Account
             return RedirectToAction("Index", "Home");
         }
 
+        [Route("User")]
+        [HttpGet]
+        [ValidateAntiForgeryToken]
+        public IActionResult User(UserViewModel model)
+        {
+            return View(model);
+        }
     }
 }
