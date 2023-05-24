@@ -2,8 +2,10 @@
 @using MySocialNetwork.Models.Users;
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+
+@*@model MySocialNetwork.ViewModels.Account.LoginViewModel;
+*@@{
+    ViewData["Title"] = "Logout";
 }
 
 @if (SignInManager.IsSignedIn(User))

@@ -71,13 +71,5 @@ namespace MySocialNetwork.Controllers.Account
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
-        [Route("User")]
-        [HttpGet]
-        [ValidateAntiForgeryToken]
-        public IActionResult User(UserViewModel model)
-        {
-            return View(model);
-        }
     }
 }
